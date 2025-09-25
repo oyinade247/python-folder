@@ -1,0 +1,25 @@
+2.1) x = 2 y = 3
+a) Answer : x = 2
+b) Answer: Value of 2 + 2 is 4
+c) Answer : x =
+d) Answer : 5 = 5
+
+2.2) By default, the variable rating is a String object and it need to be casted into an integer so the output will result to an int type.
+Answer: rating = int(input ('nter an integer rating between 1 and 10'))
+
+2.3) if grade >= 90:
+	print("Congratulation ! Your grade of 91 earns you an A in this course")
+
+2.4)     27.5 + 2
+         27.5 - 2
+         27.5 * 2
+         27.5 / 2
+	 27.5 // 2
+	 27.5 ** 2
+
+2.5)   print("diameter = ", (2 * 3.14159))
+       print("circumference =", (2 * 3.14159 * 2))
+       print("area = "(3.14159 * 2 * 2))
+
+
+
