@@ -1,22 +1,25 @@
-first_number = int(input("Enter any number: "))
+num1 = int(input("Enter number: "))
+num2 = int(input("Enter number: "))
 
+if num1 > num2:
+    first_largest = num1
+    second_largest = num2
+else:
+    first_largest = num2
+    second_largest = num1
 
-count = 1
-first_largest = first_number
-second_largest = first_number
+count = 3
 
-while count <= 10 :
-	second_number = int(input("Enter any number: "))
-	count = count + 1
-	
-	if first_largest < second_number :
-		first_largest = second_number
+while count <= 10:
+    number = int(input(f"Enter number : "))
 
-	elif first_largest > second_number :
-		second_largest = second_number
+    if number > first_largest:
+        second_largest = first_largest
+        first_largest = number
+    elif number > second_largest:
+        second_largest = number
 
-print(first_number)
-print(second_number)
+    count += 1
 
-
-
+print(first_largest)
+print(second_largest)

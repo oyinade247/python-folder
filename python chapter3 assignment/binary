@@ -1,0 +1,11 @@
+binary = int(input("Enter binary number(containing 1s and 0s)": ))
+
+sum = 0
+power = 1
+while(binary > 0):
+	remainder = binary % 10
+	sum += remainder * power
+	power = power * 2
+	number //= 10
+	
+print(sum)
