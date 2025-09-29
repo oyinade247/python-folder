@@ -1,6 +1,6 @@
-principal = 1000
+PRINCIPAL = 1000
 
-investment_return = 0.07
+INVESTMENT_RETURN = 0.07
 
 years = 1
 
@@ -8,7 +8,7 @@ amount = 0
 
 while(years <= 30):
 	
-	amount += principal * ((1 + investment_return) * years)
+	amount += PRINCIPAL * ((1 + INVESTMENT_RETURN) ** years)
 	years += 1
 
 	print("in year",years,"your investment has inreased to", amount)
