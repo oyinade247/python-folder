@@ -71,7 +71,7 @@ def phone_book():
 		case "9" : speed_dials()
 		case "10" : voice_tags()
 		case "11" : main_menu()
-		case _ : 
+		case _  : 
 			print("You entered wrong number") 
 			phone_book() 
 						
@@ -370,6 +370,7 @@ def chat():
 	chat = input("Press 0 to back to main menu: ")
 	match chat :
 		case "0" : main_menu()
+		case _ : chat()
 
 
 def call_register():
