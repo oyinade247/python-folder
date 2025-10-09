@@ -113,15 +113,15 @@ def print_small_money():
 		print_small_money()
 
 	box1 = number_guest // 6
-
+	print(f'The number of boxes of pizza to buy is {box1}')
 	if box1 % number_guest != 0 :
 		box1 = box1 +  1
 		
 		 
-	left_over =  (box1 * 6)- number_guest 
+	left_over =  (box1 * 6) - number_guest 
 	price = 2900 * box1
 	
-	print(f'The number of boxes of pizza to buy is {box1}')
+	
 	print(f'The number of leftover slices after serving is {left_over}')
 	print(f'The amount of boxes of pizza to buy is {price}');
 
@@ -158,7 +158,7 @@ def print_big_boy():
 			box1 = box1 +  1
 		
 		 
-	leftOver =  (box1 * 8) - number_guest 
+	left_over =  (box1 * 8) - number_guest 
 	price = 4000 * box1;
 		
 		
@@ -171,7 +171,7 @@ def print_big_boy():
 		case "0" :  printPizzaType();
 		case _ :
 			print("You entered wrong")
-			printSapaSize()
+			print_big_boy()
 
 
    
@@ -200,7 +200,7 @@ def print_odogwu():
 		box1 = box1 +  1
 		
 		 
-	leftOver =  (box1 * 12)- number_guest 
+	left_over =  (box1 * 12)- number_guest 
 	price = 5200 * box1
 		
 	print(f'The number of boxes of pizza to buy is {box1}')
@@ -209,10 +209,10 @@ def print_odogwu():
 
 	odogwu = input("Press 0 to go back to Pizza menu: "); 	
 	match odogwu :
-			case "0" : printPizzaType(); 
-			case _ :
-				print("You entered wrong")
-				printOdogwu()
+		case "0" : printPizzaType(); 
+		case _ :
+			print("You entered wrong")
+			print_odogwu()
 
 
 
