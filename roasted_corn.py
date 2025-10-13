@@ -28,14 +28,14 @@ def get_largest(numbers):
 	for number in numbers:
 		if number > max:
 			max = number
-		return max
+	return max
 
 def get_smallest(numbers):
 	min = numbers[0]
-	for number in range(len(numbers)):
-		if numbers < min:
-			min = numbers[number]
-		return min
+	for number in numbers:
+		if number < min:
+			min = number
+	return min
 
 		
 
@@ -67,7 +67,8 @@ def adding_suffix(word):
 		
 	return word
 
-
+#def removing_prefix_suffix(word):
+#	if 
 		
 	
 
@@ -80,7 +81,7 @@ def adding_suffix(word):
 
 			
 
-num2 = {1, 2, 3, 4}
-print(get_smallest( num2))
+num2 = [1, 2, 3, 4]
+print(get_largest( num2))
 
 
