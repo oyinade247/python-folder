@@ -1,7 +1,7 @@
 import random
-def random_number(number, number2):
-	for index in random.sample(range(number, number2)):
-		return index
+def random_number(number):
+	for number in range(10):
+		print(random.randint(1,51))		
 
 
 def get_length(number):
@@ -13,25 +13,24 @@ def get_length(number):
 
 
 def get_even_length(number):
-	sum = 0
-	#length = len(number) - 1
+	add_even = 0
 	for index in range(0, len(number), 2):
-		sum += number[index]
-	return sum
+		add_even += number[index]
+	return add_even
 
 
 def get_odd_length(number):
-	sum = 0
-	for index in range(0,len(number), 1):
-		#if number[index] % 2 == 0 :
-			sum += number[index]
-	return sum
+	add_odd = 0
+	for index in range(1,len(number), 2):
+		add_odd += number[index]
+	return add_odd
 
 
-
-
-
-
+def multiply_element(number):
+	multiply = 1;
+	for index in range(2,len(number), 2):
+		multiply *= number[index];
+	return multiply
 
 
 
@@ -64,10 +63,16 @@ def get_smallest(number):
 
 
 
+def get_first_last(words):
+	for word in words:
+		if len(word) > 2 and word[0] == word[-1] :
+			return word
+
+		
 
 
 
-def get_sequential(number):
+def get_sequential(numbers):
 	count = 0
 	for index in range(len(number)):
 		count += 1
@@ -75,21 +80,21 @@ def get_sequential(number):
 
 	
 
+def add_third(numbers):
+	add_third = 0
+	for number in range(2,len(numbers),2):
+		add_third += numbers[number]
+	return add_third
 
-def get_even(numbers):
-	even = 0
+def calculate(numbers):
+	add_all = 0
 	
-	for number in numbers:
-		if number % 2 == 1:
-			even =+ 1
 
-	list = [0] * even
-	store = 0
-	for index in range(0, len(numbers)):
-		if numbers[index] % 2 == 1:
-			list[store] = numbers[index]
-			store += 1
-	return store
+		
+
+
+
+
 	
 	
 		 
@@ -102,5 +107,5 @@ def get_even(numbers):
 
 
 
-number1 = [2, 3, 4, 1,8, 10 ]
-print(get_even(number1))
+number1 = ["dod", "epe"]
+print( get_first_last(number1))
