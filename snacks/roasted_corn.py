@@ -72,7 +72,15 @@ def adding_suffix(word):
 		
 	
 
-
+def getLongest(words):
+	word_list = words.split()
+	length = 3
+	longest = word_list[0]
+	count = 0
+	for word in word_list:
+		if len(word) > len(longest):
+			longest = word
+	return longest
 
 
 
@@ -82,6 +90,6 @@ def adding_suffix(word):
 			
 
 num2 = [1, 2, 3, 4]
-print(get_largest( num2))
+print(getLongest("iiiiiii loveiii monkeys"))
 
 

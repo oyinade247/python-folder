@@ -1,7 +1,4 @@
-amount = 0
-transaction_database = []
-
-def print_main_menu():
+def menu(amount, database):
 	prompt = """
 		WELCOME TO TRANSACTION LOG APP
 		Press any key from 1 - 3:
@@ -18,45 +15,32 @@ def print_main_menu():
 		""";
 	print(prompt)
 	transaction_menu = input("Enter any key from 1- 4: ")
-	match transaction_menu :
-		case "1": deposit()	
-			
-		case "2": withdraw()
-
-		case "3": history()
-						
-			
-		case "4": balance()
-
-		case "5" : print("Exiting")
-
+	match transaction_menu:
+		case "1": deposit(amount, database)
+		case "2": withdraw(amount, database)
+		case "3": history(amount,database)
+		case "4": balance(amount,database)
+		case "5": print("Exiting...")
 		case _ : 
-			print("you entered wrong! enter the correct number")
-			print_main_menu()
+			print("You entered wrong ")
+			menu(amount,database)
 
 
 
-def deposit():
-	global amount
-	global transaction_database
-
+def deposit(amount, database):
 	print("DEPOSIT ANY AMOUNT")
 	amount1 = int(input("Enter any amount to deposit: "))
 
 	print(f"Deposited successfully, you deposited $ {amount1}")
 	amount += amount1
 	transaction = f"deposited ${amount1} | new Balance: ${amount}"
-	transaction_database.append(transaction)
+	database.append(transaction)
 
 	print(f"Your new account balance is $ {amount}")
-	print_main_menu()
+	menu(amount, database)
 
 
-
-def withdraw():
-	global amount
-	global transaction_database
-	
+def withdraw(amount, database):
 	print ("WITHDRAW  ANY AMOUNT")
 	withdraw = int(input("Enter withdrawal amount:"))
 
@@ -64,32 +48,42 @@ def withdraw():
 		print("insufficient funds")
 		withdraw()
 
-	print(f"Debited successfully, you withdew ${withdraw}")
+	print(f"Debited successfully, you withdrew ${withdraw}")
 	amount -= withdraw
 	print(f"Your new account balance is $ {amount}.")
 	transaction = f"withdraw ${withdraw} | new balance : ${amount}"
-	transaction_database.append(transaction)
+	database.append(transaction)
+	menu(amount, database)
 
-	print_main_menu()
 
 
-def history():
-	global transaction_database
+def history(amount, database):
 	print("TRANSACTION HISTORY")
-	for history in transaction_database:
+	for history in database:
 		print(history)
-	print_main_menu()
+	menu(amount, database)
 
 
 
-def balance():
-	global amount
-	if balance == 0:
+def balance(amount,database):
+	if amount == 0:
 		print("You have $0 in your account")
-	print (f"your remaining balance is ${amount}")
-	print_main_menu()
-	
+	print(f"your remaining balance is ${amount}")
+	menu(amount,database)
+
+
+
+def main():
+	amount = 0
+	database = []
+	menu(amount, database)
+
+
+
 	
 
 
-print_main_menu()
+
+
+
+main()

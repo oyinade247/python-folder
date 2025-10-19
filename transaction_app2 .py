@@ -1,6 +1,3 @@
-amount = 0
-transaction_database = []
-
 def print_main_menu():
 	prompt = """
 		WELCOME TO TRANSACTION LOG APP
@@ -35,11 +32,7 @@ def print_main_menu():
 			print_main_menu()
 
 
-
-def deposit():
-	global amount
-	global transaction_database
-
+def deposit(amount, account, transaction = []):
 	print("DEPOSIT ANY AMOUNT")
 	amount1 = int(input("Enter any amount to deposit: "))
 
@@ -53,10 +46,8 @@ def deposit():
 
 
 
-def withdraw():
-	global amount
-	global transaction_database
-	
+
+def withdraw(amount, account_balance,transaction = []):
 	print ("WITHDRAW  ANY AMOUNT")
 	withdraw = int(input("Enter withdrawal amount:"))
 
@@ -73,7 +64,7 @@ def withdraw():
 	print_main_menu()
 
 
-def history():
+def history(transaction = []):
 	global transaction_database
 	print("TRANSACTION HISTORY")
 	for history in transaction_database:
@@ -82,8 +73,7 @@ def history():
 
 
 
-def balance():
-	global amount
+def balance(amount):
 	if balance == 0:
 		print("You have $0 in your account")
 	print (f"your remaining balance is ${amount}")
@@ -92,4 +82,17 @@ def balance():
 	
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 print_main_menu()
+
