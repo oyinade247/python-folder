@@ -14,7 +14,9 @@ def menu(database):
 
 		4 => update book
 
-		5 => show all book	
+		5 => show all book
+
+		6 => exit	
 
 
 		"""
@@ -27,7 +29,7 @@ def menu(database):
 			page = database.index(suggested)
 			print(f"page: {page}")
 			
-			suggestion = input("Would you like me to suggest another book? ")
+			suggestion = input("Would you like me to suggest another book? ").lower()
 			if suggestion == "yes":
 				suggested = suggest_book(database)
 				print(f"Book for the day:\n Book Title: {suggested}")
@@ -41,30 +43,41 @@ def menu(database):
 
 		case "2" : 
 			
-			book = input("Enter a book title:")
+			book = input("Enter a book title:").lower
 			
-			added = add_book(database,book)
-			print(f"book added successfully,{added}")
+			database = add_book(database,book)
+					
+			print(f"book added successfully")
+			for index, book in enumerate(database):
+				print(f"{index} {book}")
+				
 			menu(database)
 
 		case "3" :
-			book = input("Enter the book title to remove: ")
+			book = input("Enter the book title to remove: ").lower()
 			removed = remove_book(database,book)
 			print(f"Book removed successfully")
 			menu(database)
 
 		case "4" :
-			old_book = input("Enter the odd title: ")
-			new_book = input("Enter the new title: ")
+			old_book = input("Enter the odd title: ").lower()
+			new_book = input("Enter the new title: ").lower()
 			updated = update_book(database,old_book,new_book)
 
-			print(f"Book updated successfully {updated}!")
+			print(f"Book updated successfully!")
+			for index, book in enumerate(database):
+				print(f"{index} {book}")
 			menu(database)
 			
 
 		case "5" :
 			total = show_books(database)
-			print(total)
+			for index, book in enumerate(total):
+				print(f"{index} {book}")
+			menu(database)
+
+		case "6" : print("See you another day")
+
 			
 			
 				
@@ -76,7 +89,7 @@ def menu(database):
 
 def main():
 
-	database = ["To Kill a Mockingbird", "1984", "Pride and Prejudice", "The Great Gatsby", "Moby-Dick", "War and Peace", "Jane Eyre", "Crime and Punishment", "The Catcher in the Rye", "The Lord of the Rings"]
+	database = ["to kill a mockingbird", "1984", "pride and prejudice", "the great gatsby", "moby-dick", "war and peace", "jane eyre", "crime and punishment", "the catcher in the rye", "the lord of the rings"]
 
 	menu(database)
 
