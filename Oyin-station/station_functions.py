@@ -1,4 +1,6 @@
 def sell_petrol(liters,amount,database):
+	if type(liters) is not int or type(amount) is not int:
+		 raise TypeError("incorrect input")
 	if liters:
 		amount = liters * 650
 	if amount:
@@ -8,21 +10,25 @@ def sell_petrol(liters,amount,database):
 	return transaction
 
 def sell_diesel(liters,amount,database):
+	if type(liters) and type(amount) is not int:
+		raise TypeError("incorrect Input")
 	if liters:
 		amount =amount = liters * 720
 	if amount:
 		liters = amount // 720
-	transaction = ["disel", amount, liters]
+	transaction = ["diesel", amount, liters]
 	database.append(transaction)
 	return transaction
 
 def sell_kerosene(liters,amount,database):
+	if type(liters) and type(amount) is not int:
+		raise TypeError("incorrect input")
 	if liters:
-		amount =amount = liters * 550
+		amount = liters * 550
 	if amount:
 		liters = amount // 550
 	transaction = ["kerosene", amount, liters]
-	database.append(transaction)
+	database.append(transaction)	
 	return transaction
 
 def sell_gas(liters,amount,database):

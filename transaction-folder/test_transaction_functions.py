@@ -3,10 +3,11 @@ from transaction_functions import deposit,withdraw, show_transactions
 
 class TestTransactionFunctions(TestCase):
 
-	def test_that_deposit_function_will_return_correct_output(self):
-		actual = deposit(1000, 200, [])
+	
+	def test_that_deposit_function_will_return_updated_balance(self):
+		actual = deposit(1000,200,[])
 		expected = 1200
-		self.assertEqual(actual, expected)
+		self.assertEqual(actual,expected)
 
 	def test_that_withdraw_function_will_work_as_expected(self):
 		actual = withdraw(200, 1000, [])

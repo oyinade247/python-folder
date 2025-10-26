@@ -124,12 +124,12 @@ print(joined_list)
 
 
 
-from functools import reduce
+#from functools import reduce
 def sum_square(numbers,number):
-	return numbers[0] * number
+	return numbers ** 2
 
 number = [1,2,3]
-squared = reduce(sum_square,number)
+squared = list(map(sum_square,number))
 print(squared)
 
 

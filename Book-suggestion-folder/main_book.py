@@ -43,7 +43,7 @@ def menu(database):
 
 		case "2" : 
 			
-			book = input("Enter a book title:").lower
+			book = input("Enter a book title:").lower()
 			
 			database = add_book(database,book)
 					
