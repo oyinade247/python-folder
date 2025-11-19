@@ -5,8 +5,6 @@ def deposit(amount, account_balance, database):
 	return account_balance
 
 def withdraw(amount, account_balance, database):
-	if type(amount) is not int:
-		raise TypeError() 
 	if amount > account_balance:
 		raise valueError("insufficient funds")
 	account_balance -= amount
@@ -19,4 +17,5 @@ def show_transactions(database):
 	return database
 
 	
+
 
