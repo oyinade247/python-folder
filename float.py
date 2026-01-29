@@ -1,13 +1,17 @@
 def only_floats(a, b):
+
 	if type(a) and type(b) == float() :
 		return 2
 
-	elif type(a) or type(b) == float() :
+	elif type(a) and type(b) != float() :
+		return 0
+	
+
+	else: 
 		return 1
 
 
-	else:
-		return 0
+	
 
 	
 	
